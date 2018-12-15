@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container admin-center">
+        <tbody>
+            <tr>
+                <td colspan="1">
+                    <form class="well form-horizontal">
+                        <fieldset>
+                            <h3>Weather</h3>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">City</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span><input
+                                            id="weather-city" name="weather-city" placeholder="City" class="form-control"
+                                            required="false" value="<%= weather.city %>" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </td>
+                <td colspan="1">
+                    <form class="well form-horizontal">
+                        <fieldset>
+                            <h3>News</h3>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Country</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span><input
+                                            id="news-country" name="news-country" placeholder="Country" class="form-control" required="false" value="<%= news.country %>"
+                                            type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Category</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span><input
+                                            id="news-category" name="news-category" placeholder="Category" class="form-control" required="false" value="<%= news.category %>"
+                                            type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Number of Articles</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span><input
+                                            id="news-nb_articles" name="news-nb_articles" placeholder="Nb of Articles" class="form-control" required="false" value="<%= news.nb_articles %>"
+                                            type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </td>
+                <td colspan="1">
+                    <form class="well form-horizontal">
+                        <fieldset>
+                            <h3>Quote</h3>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Category</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span><input
+                                            id="quote-category" name="quote-category" placeholder="Category" class="form-control"
+                                            required="false" value="<%= quote.category %>" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </div>
+</body>
+
+</html>

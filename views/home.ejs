@@ -1,8 +1,24 @@
-<%- include('header', {title: 'Home'}) -%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script><%- include('Components/date.js') -%></script>
+    <script><%- include('Components/quote.js') -%></script>
+    <script><%- include('Components/weather.js') -%></script>
+    <script><%- include('Components/news.js') -%></script>
+</head>
+<body class="home">
 <div id="app" class="center">
     <date class="top-left"></date>
     <weather class="top-right"></weather>
     <quote></quote>
-    <news class="news down"></news>
+    <news class="down"></news>
 </div>
-<%- include('footer') -%>
+</body>
+<script>
+    <%- include('vue.js') -%>
+</script>
+</html>
