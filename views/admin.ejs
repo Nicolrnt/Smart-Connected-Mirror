@@ -2,87 +2,135 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Admin</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="container admin-center">
-        <tbody>
-            <tr>
-                <td colspan="1">
-                    <form class="well form-horizontal">
-                        <fieldset>
-                            <h3>Weather</h3>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">City</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span><input
-                                            id="weather-city" name="weather-city" placeholder="City" class="form-control"
-                                            required="false" value="<%= weather.city %>" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </td>
-                <td colspan="1">
-                    <form class="well form-horizontal">
-                        <fieldset>
-                            <h3>News</h3>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Country</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span><input
-                                            id="news-country" name="news-country" placeholder="Country" class="form-control" required="false" value="<%= news.country %>"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Category</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span><input
-                                            id="news-category" name="news-category" placeholder="Category" class="form-control" required="false" value="<%= news.category %>"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Number of Articles</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span><input
-                                            id="news-nb_articles" name="news-nb_articles" placeholder="Nb of Articles" class="form-control" required="false" value="<%= news.nb_articles %>"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </td>
-                <td colspan="1">
-                    <form class="well form-horizontal">
-                        <fieldset>
-                            <h3>Quote</h3>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Category</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span><input
-                                            id="quote-category" name="quote-category" placeholder="Category" class="form-control"
-                                            required="false" value="<%= quote.category %>" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </div>
+  <div class="container admin-center">
+    <tbody>
+      <tr>
+        <td colspan="1">
+          <form class="well form-horizontal">
+            <fieldset>
+              <h3>Weather</h3>
+              <div class="form-group">
+                <label class="col-md-4 control-label">City</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                    <input id="weather-city" name="weather_city" placeholder="City" class="form-control" required="false"
+                      value="<%- weather.city %>" type="text">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </td>
+        <td colspan="1">
+          <form class="well form-horizontal">
+            <fieldset>
+              <h3>News</h3>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Country</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                    <select class="selectpicker form-control" name="news_country">
+                      <option value="fr" <% if (news.country=='fr' ) { %> selected
+                        <% } %> >France</option>
+                      <option value="us" <% if (news.country=='us' ) { %> selected
+                        <% } %> >United States</option>
+                      <option value="id" <% if (news.country=='id' ) { %> selected
+                        <% } %> >Indonesia</option>
+                      <option value="in" <% if (news.country=='in' ) { %> selected
+                        <% } %> >India</option>
+                      <option value="cn" <% if (news.country=='cn' ) { %> selected
+                        <% } %> >China</option>
+                      <option value="mx" <% if (news.country=='mx' ) { %> selected
+                        <% } %> >Mexico</option>
+                      <option value="ru" <% if (news.country=='ru' ) { %> selected
+                        <% } %> >Russia</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Category</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+                    <select class="selectpicker form-control" name="news_category">
+                      <option value="business" <% if (news.category=='business' ) { %> selected
+                        <% } %> >Business</option>
+                      <option value="entertainment" <% if (news.category=='entertainment' ) { %> selected
+                        <% } %> >Entertainment</option>
+                      <option value="general" <% if (news.category=='general' ) { %> selected
+                        <% } %> >General</option>
+                      <option value="health" <% if (news.category=='health' ) { %> selected
+                        <% } %> >Health</option>
+                      <option value="science" <% if (news.category=='science' ) { %> selected
+                        <% } %> >Science</option>
+                      <option value="sports" <% if (news.category=='sports' ) { %> selected
+                        <% } %> >Sports</option>
+                      <option value="technology" <% if (news.category=='technology' ) { %> selected
+                        <% } %> >technology</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Number of Articles</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span>
+                    <select class="selectpicker form-control" name="news_nb">
+                      <option value="0" <% if (news.nb==0) { %> selected
+                        <% } %> >0</option>
+                      <option value="1" <% if (news.nb==1) { %> selected
+                        <% } %> >1</option>
+                      <option value="2" <% if (news.nb==2) { %> selected
+                        <% } %> >2</option>
+                      <option value="3" <% if (news.nb==3) { %> selected
+                        <% } %> >3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </td>
+        <td colspan="1">
+          <form class="well form-horizontal">
+            <fieldset>
+              <h3>Quote</h3>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Theme</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+                    <select class="selectpicker form-control" name="quote_theme">
+                      <option value="funny" <% if (quote.theme)=='funny' ) { %> selected
+                        <% } %> >Funny</option>
+                      <option value="management" <% if (quote.theme)=='management' ) { %> selected
+                        <% } %> >Management</option>
+                      <option value="sports" <% if (quote.theme)=='sports' ) { %> selected
+                        <% } %> >Sports</option>
+                      <option value="life" <% if (quote.theme)=='life' ) { %> selected
+                        <% } %> >Life</option>
+                      <option value="inspire" <% if (quote.theme)=='inspire' ) { %> selected
+                        <% } %> >Inspire</option>
+                      <option value="love" <% if (quote.theme)=='love' ) { %> selected
+                        <% } %> >Love</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </div>
 </body>
 
 </html>
