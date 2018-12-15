@@ -8,14 +8,22 @@
 const express = require("express");
 const path = require("path");
 
+/* Database */
+const mongoose = require('mongoose');
+
 /* Require routes */
 const weather = require("./routes/weather");
 const news = require("./routes/news");
 const quote = require("./routes/quote");
+const admin = require("./routes/admin");
+const update = require("./routes/update");
 
 /* Create app */
 const app = express();
 const port = 8080;
+
+/* Setup Database */
+mongoose.connect("mongodb://localhost:27017/Smart-Connected-Mirror", { useNewUrlParser: true });
 
 /* Set up view engine */
 app.set("view engine", "ejs");
@@ -26,6 +34,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/weather", weather);
 app.use("/api/news", news);
 app.use("/api/quote", quote);
+app.use("/admin", admin);
+app.use("/api/update", update);
 
 /* Home */
 app.get("/", function(req, res) {

@@ -5,6 +5,11 @@ NodeJs  + VueJS = Smart Connected Mirror
 Install node modules
 ```
 npm install
+brew install mongodb
+sudo mkdir -p ./data/db
+mongod --dbpath `pwd`/data/db
+should display the second time : [initandlisten] waiting for connections on port 27017
+npm install mongoose
 ```
 
 # Launching

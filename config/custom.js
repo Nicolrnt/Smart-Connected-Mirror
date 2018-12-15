@@ -23,8 +23,8 @@ const news = {
 	//    business entertainment general health
 	//    science sports technology
 	category: "technology",
-	// choose a number between 1 and 5
-	nb_articles: 3
+	// choose a number between 1 and 3
+	nb: 1
 }
 
 /* Quote */
