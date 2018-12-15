@@ -6,17 +6,22 @@
 
 /* Requires */
 const router = require("express").Router();
-const request = require("request")
-const keys = require("../config/keys").weather
-const custom = require("../config/custom").weather
-const translate = require("../utils/translator").weather
+const request = require("request");
+const keys = require("../config/keys").weather;
+const translate = require("../utils/translator").weather;
+const Custom = require("../models/custom");
 
 /* Weather */
-router.get("/", function(req, res) {
-	const endPoint = "https://api.openweathermap.org/"
-	const url = endPoint + "data/2.5/weather?q=" + custom.city + "&appid=" + keys.appId;
+async function getCity() {
+	return ((await Custom.findOne({name: "custom"})).weather_city);
+}
+
+router.get("/", async function(req, res) {
+	const endPoint = "https://api.openweathermap.org/";
+	const city = await getCity();
+	const url = endPoint + "data/2.5/weather?q=" + city + "&appid=" + keys.appId;
 	var weather = {
-		city: custom.city,
+		city: city,
 		info: "",
 		description: "",
 		temp: 0
@@ -28,9 +33,9 @@ router.get("/", function(req, res) {
 		try {
 			weather.info = json.weather[0].main;
 			weather.description = json.weather[0].description;
-			weather.temp = json.main.temp - 273.15
+			weather.temp = json.main.temp - 273.15;
 			// translate to FR
-			weather = translate(weather)
+			weather = translate(weather);
 			res.json(weather);
 		} catch (err) {
 			res.json(weather);

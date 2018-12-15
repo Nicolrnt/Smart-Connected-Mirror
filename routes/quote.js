@@ -6,13 +6,18 @@
 
 /* Requires */
 const router = require("express").Router();
-const request = require("request")
-const custom = require("../config/custom").quote
+const request = require("request");
+const Custom = require("../models/custom");
 
 /* Quote */
-router.get("/", function(req, res) {
+async function getTheme() {
+	return ((await Custom.findOne({name: "custom"})).quote_theme);
+}
+
+router.get("/", async function(req, res) {
 	const endPoint = "http://quotes.rest/";
-	const url = endPoint + "qod.json?category=" + custom.theme;
+	const theme = await getTheme();
+	const url = endPoint + "qod.json?category=" + theme;
 	var quote = {
 		text: "I look so fabulous today !",
 		author: "Myself"
@@ -20,7 +25,6 @@ router.get("/", function(req, res) {
 
 	request.get(url, function(err, response, body) {
 		try {
-			console.log(body);
 			var json = JSON.parse(body);
 			
 			quote.text = json.contents.quotes[0].quote;

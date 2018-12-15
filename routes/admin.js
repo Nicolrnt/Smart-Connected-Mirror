@@ -33,7 +33,7 @@ router.get("/", function(req, res) {
 		reply.quote = {
 			theme: custom.quote_theme
 		}
-		res.json(reply);
+		res.render("admin", reply=reply);
 	});
 });
 
