@@ -1,0 +1,84 @@
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/RobotoMono-Thin.ttf);
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 50px;
+  background-color: rgb(33, 33, 33);
+  color: white;
+}
+
+.right {
+  float: right;
+}
+
+.top-left {
+  top: 50px;
+  left: 50px;
+  position: absolute;
+}
+
+.top-right {
+  top: 50px;
+  right: 50px;
+  position: absolute;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.down {
+  display: flex;
+  align-items: flex-end;
+  height: 90vh;
+  position: absolute
+}
+
+.hour {
+  font: 14px roboto;
+  color: white;
+  font-size: 60px;
+}
+
+.day {
+  font: 14px roboto;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.quote {
+  font-size: 25px;
+}
+
+.author {
+  font-size: 15px;
+}
+
+.weather-img {
+  margin-right: 30px;
+  top: 10px;
+}
+
+.weather-desc {
+  font: 14px roboto;
+  font-size: 20px;
+}
+
+.news {
+  padding: 50px;
+}
+
+.article-title {
+  margin: 10px;
+  font-size: 20px;
+}
+
+li {
+      list-style-type: none;
+}
