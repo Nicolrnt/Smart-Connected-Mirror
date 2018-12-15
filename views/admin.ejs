@@ -109,17 +109,17 @@
                 <div class="col-md-8 inputGroupContainer">
                   <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
                     <select class="selectpicker form-control" name="quote_theme">
-                      <option value="funny" <% if (quote.theme) == 'funny' ) { %> selected
+                      <option value="funny" <% if (quote.theme == 'funny') { %> selected
                         <% } %> >Funny</option>
-                      <option value="management" <% if (quote.theme) == 'management' ) { %> selected
+                      <option value="management" <% if (quote.theme == 'management') { %> selected
                         <% } %> >Management</option>
-                      <option value="sports" <% if (quote.theme) == 'sports' ) { %> selected
+                      <option value="sports" <% if (quote.theme == 'sports') { %> selected
                         <% } %> >Sports</option>
-                      <option value="life" <% if (quote.theme) == 'life' ) { %> selected
+                      <option value="life" <% if (quote.theme == 'life') { %> selected
                         <% } %> >Life</option>
-                      <option value="inspire" <% if (quote.theme) == 'inspire' ) { %> selected
+                      <option value="inspire" <% if (quote.theme == 'inspire') { %> selected
                         <% } %> >Inspire</option>
-                      <option value="love" <% if (quote.theme) == 'love' ) { %> selected
+                      <option value="love" <% if (quote.theme == 'love') { %> selected
                         <% } %> >Love</option>
                     </select>
                   </div>
