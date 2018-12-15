@@ -3,7 +3,7 @@
   src: url(../fonts/RobotoMono-Thin.ttf);
 }
 
-body {
+.home {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 50px;
   background-color: rgb(33, 33, 33);
@@ -31,6 +31,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 85vh;
+}
+
+.admin-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .down {
@@ -68,10 +75,6 @@ body {
 .weather-desc {
   font: 14px roboto;
   font-size: 20px;
-}
-
-.news {
-  padding: 50px;
 }
 
 .article-title {
