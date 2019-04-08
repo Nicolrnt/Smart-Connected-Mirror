@@ -20,3 +20,6 @@ npm start
 ```
 
 Enjoy !
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
